@@ -16,10 +16,15 @@ ui <- fluidPage(
     sidebarLayout(
         sidebarPanel(
             radioButtons("dimred", "Choose Dimensionality Reduction:",
-                         choices = c("UMAP", "t-SNE"), selected = "UMAP")
+                         choices = c("UMAP", "t-SNE"), selected = "UMAP"),
+            width = 3  # Reduce sidebar width
         ),
         mainPanel(
-            plotOutput("scatterPlot")
+            # Wrap the plot in a column to control its width
+            column(
+                width = 8,  # Adjust this value to change plot width
+                plotOutput("scatterPlot")
+            )
         )
     )
 )
@@ -33,7 +38,7 @@ server <- function(input, output, session) {
         } else {
             plotReducedDim(sce, dimred = "TSNE", color_by = "reclustered.broad")
         }
-    })
+    }, height = 500)  # Set a fixed height for the plot
 }
 
 # Run the app
