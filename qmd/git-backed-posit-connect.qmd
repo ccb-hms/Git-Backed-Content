@@ -1,20 +1,23 @@
 ---
 title: "Git-Backed Content on Posit Connect Servers"
+author: "Anthony Christidis"
 editor: visual
 format: 
     html:
         grid: 
-          body-width: 1000px
+          body-width: 950px
           sidebar-width: 200px
           margin-width: 200px
         toc: true
         toc-depth: 2
+        toc-location: left
         code-fold: show
         code-tools: true
         theme: 
           light: flatly
           dark: darkly
         number-sections: false
+css: style.css
 ---
 
 ## Overview
@@ -23,9 +26,9 @@ This tutorial demonstrates how to deploy a Shiny app on Posit Connect, leveragin
 
 The code for this tutorial is contained in the this [GitHub respository](https://github.com/ccb-hms/Git-Backed-Content). The main elements of this tutorial are the following:
 
--   The analytics code to generate and save the data using `pins`, available in the [master branch](https://github.com/ccb-hms/Git-Backed-Content) of the GitHub repository.
--   The Quarto code to generate this document (which is also deployed on the same Posit Connect server as the Shiny app), available in the [Quarto branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Quarto) of the GitHub repository.
--   The code to generate the Shiny app, available in the [Shiny branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Shiny) of the GitHub repository.
+-   [master branch](https://github.com/ccb-hms/Git-Backed-Content): the analytics code to generate and save the data using [pins](https://cran.r-project.org/web/packages/pins/index.html).
+-   [Quarto branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Quarto): the Quarto code to generate this document (which is also deployed on the same Posit Connect server as the Shiny app).
+-   [Shiny branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Shiny): the code to generate the Shiny app.
 
 The resulting output of this repository are:
 
@@ -236,6 +239,6 @@ The command `rsconnect::writeManifest("app.R")` generates a `manifest.json` file
     -   Go to **Settings \> Vars** on the Posit Connect page.
     -   Add the necessary environment variables, specifically `POSIT_SERVER_URL` and `POSIT_API_KEY`, to securely manage your app’s access credentials.
 
-By following these steps, Posit Connect will automatically pull the contents of your repository and deploy the [Shiny app](https://ccb.connect.hms.harvard.edu/Git-Backed-Content-Shiny-App/) to visualize the single-cell RNA-seq data in reduced dimensions. on the server. 
+By following these steps, Posit Connect will automatically pull the contents of your repository and deploy the [Shiny app](https://ccb.connect.hms.harvard.edu/Git-Backed-Content-Shiny-App/) to visualize the single-cell RNA-seq data in reduced dimensions. on the server.
 
 By default, the Connect server checks your repository for new commits every 15 minutes, ensuring your deployed content remains up to date without any further manual interaction.
