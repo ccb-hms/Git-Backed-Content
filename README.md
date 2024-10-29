@@ -17,11 +17,11 @@ This tutorial provides step-by-step instructions for:
 
 The tutorial's complete codebase is housed in this [GitHub repository](https://github.com/ccb-hms/Git-Backed-Content). Below are the main components and their respective branches:
 
--   **Analytics Code**: Responsible for generating and saving data using `pins`, located in the [master branch](https://github.com/ccb-hms/Git-Backed-Content).
+-   [master branch](https://github.com/ccb-hms/Git-Backed-Content): analytics code responsible for generating and saving data using [pins](https://cran.r-project.org/web/packages/pins/index.html).
 
--   **Quarto Document Code**: Generates this documentation, also deployed on the Posit Connect server alongside the Shiny app, available in the [Quarto branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Quarto).
+-   [Quarto branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Quarto): code to generate the tutorial Quarto document, also deployed on the Posit Connect server alongside the Shiny app.
 
--   **Shiny Application Code**: Codebase for the Shiny app visualizing single-cell RNA-seq data, located in the [Shiny branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Shiny).
+-   [Shiny branch](https://github.com/ccb-hms/Git-Backed-Content/tree/Shiny): Codebase for the Shiny app visualizing single-cell RNA-seq data.
 
 ## Outputs
 
